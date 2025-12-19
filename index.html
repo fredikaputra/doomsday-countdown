@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+    <title>Avengers: Doomsday Countdown | Release Date December 18, 2026</title>
+  
+    <meta
+      name="description"
+      content="Live countdown to Marvel Studios' Avengers: Doomsday. Track months, days, hours, minutes, and seconds until the official release date on December 18, 2026."
+    />
+    <meta
+      name="keywords"
+      content="Avengers Doomsday countdown, Avengers Doomsday release date, Marvel countdown, Avengers 2026, Avengers Doomsday timer"
+    />
+    <meta name="author" content="Fredika Putra" />
+  
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+  
+    <link rel="canonical" href="https://fredikaputra.github.io/doomsday-countdown/" />
+  
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Avengers: Doomsday Countdown" />
+    <meta
+      property="og:description"
+      content="A cinematic countdown timer tracking the release of Marvel Studios' Avengers: Doomsday on December 18, 2026."
+    />
+    <meta property="og:url" content="https://fredikaputra.github.io/doomsday-countdown/" />
+    <meta property="og:image" content="https://fredikaputra.github.io/doomsday-countdown/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+  
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Avengers: Doomsday Countdown" />
+    <meta
+      name="twitter:description"
+      content="Live countdown to Avengers: Doomsday. Release date: December 18, 2026."
+    />
+    <meta name="twitter:image" content="https://fredikaputra.github.io/doomsday-countdown/og-image.jpg" />
+  
+    <meta name="theme-color" content="#0a160a" />
+    <meta name="color-scheme" content="dark" />
+  
+    <link rel="preload" href="/Digital Dismay.otf" as="font" type="font/otf" crossorigin />
+    <link rel="preload" href="/Clock Ticking.mp3" as="audio" />
+  
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        @font-face {
+        font-family: "Digital Dismay";
+        src: url("/Digital Dismay.otf") format("opentype");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+    .digital-font {
+        font-family: "Digital Dismay", monospace;
+    }
+    .countdown span {
+      position: relative;
+    }
+  
+    .countdown span::after {
+      content: attr(data-label);
+      position: absolute;
+      left: 50%;
+      top: 100%;
+      transform: translateX(-50%);
+      margin-top: 0.75rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      opacity: 0.9;
+      white-space: nowrap;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
+    }
+  </style>
+  </head>
+  
+
+  <body class="h-screen w-screen overflow-hidden">
+    <img src="avengersdoomsday.png" style="position: absolute;width: 250px;left: 50%;transform: translateX(-50%);top: 150px;"/>
+    <div
+        class="h-full w-full flex items-center justify-center"
+        style="
+        background: radial-gradient(circle at center, #ffffff 0%, #807979 0.8%, #6e776e 0%, #455b45 3%, #274127 18%, #112111 52%, #070b07 100%);
+        "
+    >
+
+        <audio
+            id="bg-music"
+            src="/The Avengers.mp3"
+            preload="auto"
+            loop
+        ></audio>
+
+        <audio
+            id="tick-sound"
+            src="/Clock Ticking.mp3"
+            preload="auto"
+        ></audio>
+
+    
+        <div class="countdown digital-font text-white text-6xl">
+            <span id="months" data-label="MONTHS">00</span> :
+            <span id="days" data-label="DAYS">00</span> :
+            <span id="hours" data-label="HOURS">00</span> :
+            <span id="minutes" data-label="MINUTES">00</span> :
+            <span id="seconds" data-label="SECONDS">00</span>
+        </div>
+
+        <a href="https://www.marvel.com/movies/avengers-doomsday" target="_blank" style="position: absolute;margin-top: 300px;color: white;font-size: 12px;letter-spacing: 3px;cursor: pointer;" class="font-mono">Learn More</a>
+      
+    </div>
+
+    <footer class="absolute bottom-5 text-center text-xs text-white/60" style="left: 50%;transform: translateX(-50%);">
+      A 
+      <a
+        href="https://github.com/fredikaputra"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group relative inline-block text-white/70 hover:text-white transition"
+      >
+        fan
+        <span
+          class="absolute left-0 -bottom-0.5 h-px w-0 bg-white transition-all duration-300 group-hover:w-full"
+        ></span>
+      </a>-made countdown, crafted with love ❤️ for fellow fans.
+    </footer>
+    
+    <script>
+      const bgMusic = document.getElementById("bg-music")
+      const tickSound = document.getElementById("tick-sound")
+    
+      bgMusic.volume = 0.4
+      tickSound.volume = 0.6
+    
+      let audioUnlocked = false
+    
+      function unlockAudio() {
+        if (audioUnlocked) return
+        audioUnlocked = true
+    
+        bgMusic.play().catch(() => {})
+      }
+    
+      document.addEventListener("click", unlockAudio, { once: true })
+    
+      function playTick() {
+        if (!audioUnlocked) return
+        tickSound.currentTime = 0
+        tickSound.play().catch(() => {})
+      }
+    
+      const targetDate = new Date(2026, 11, 18, 0, 0, 0)
+    
+      function updateCountdown() {
+        const now = new Date()
+        let diff = targetDate - now
+        if (diff <= 0) return
+    
+        const seconds = Math.floor((diff / 1000) % 60)
+        const minutes = Math.floor((diff / 1000 / 60) % 60)
+        const hours = Math.floor((diff / 1000 / 60 / 60) % 24)
+    
+        let temp = new Date(now)
+        let months = 0
+        while (true) {
+          const next = new Date(temp)
+          next.setMonth(next.getMonth() + 1)
+          if (next <= targetDate) {
+            temp = next
+            months++
+          } else break
+        }
+    
+        const days = Math.floor(
+          (targetDate - temp) / (1000 * 60 * 60 * 24)
+        )
+    
+        document.getElementById("months").textContent = String(months).padStart(2, "0")
+        document.getElementById("days").textContent = String(days).padStart(2, "0")
+        document.getElementById("hours").textContent = String(hours).padStart(2, "0")
+        document.getElementById("minutes").textContent = String(minutes).padStart(2, "0")
+        document.getElementById("seconds").textContent = String(seconds).padStart(2, "0")
+    
+        playTick()
+      }
+    
+      updateCountdown()
+      setInterval(updateCountdown, 1000)
+    </script>
+  </body>
+</html>
