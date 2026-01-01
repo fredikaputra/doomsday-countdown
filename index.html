@@ -1,22 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="scroll-smooth">
   <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BVL02MW901"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-BVL02MW901"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-      gtag('config', 'G-BVL02MW901');
+      gtag("config", "G-BVL02MW901");
     </script>
 
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-  
+    <meta name="theme-color" content="#0a160a" />
+    <meta name="color-scheme" content="dark" />
+
     <title>Avengers: Doomsday Countdown | Release Date December 18, 2026</title>
-  
+
     <meta
       name="description"
       content="Live countdown to Marvel Studios' Avengers: Doomsday. Track months, days, hours, minutes, and seconds until the official release date on December 18, 2026."
@@ -26,33 +33,36 @@
       content="Avengers Doomsday countdown, Avengers Doomsday release date, Marvel countdown, Avengers 2026, Avengers Doomsday timer"
     />
     <meta name="author" content="Fredika Putra" />
-  
+
     <meta name="robots" content="index, follow" />
     <meta name="googlebot" content="index, follow" />
-  
-    <link rel="canonical" href="https://fredikaputra.github.io/doomsday-countdown/" />
-  
+
+    <link rel="canonical" href="https://fredika.dev/doomsday-countdown/" />
+
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Avengers: Doomsday Countdown" />
     <meta
       property="og:description"
       content="A cinematic countdown timer tracking the release of Marvel Studios' Avengers: Doomsday on December 18, 2026."
     />
-    <meta property="og:url" content="https://fredikaputra.github.io/doomsday-countdown/" />
-    <meta property="og:image" content="https://fredikaputra.github.io/doomsday-countdown/og-image.jpg" />
+    <meta property="og:url" content="https://fredika.dev/doomsday-countdown/" />
+    <meta
+      property="og:image"
+      content="https://fredika.dev/doomsday-countdown/og-image.jpg"
+    />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-  
+
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Avengers: Doomsday Countdown" />
     <meta
       name="twitter:description"
       content="Live countdown to Avengers: Doomsday. Release date: December 18, 2026."
     />
-    <meta name="twitter:image" content="https://fredikaputra.github.io/doomsday-countdown/og-image.jpg" />
-  
-    <meta name="theme-color" content="#0a160a" />
-    <meta name="color-scheme" content="dark" />
+    <meta
+      name="twitter:image"
+      content="https://fredika.dev/doomsday-countdown/og-image.jpg"
+    />
   
     <link rel="preload" href="digital_dismay.otf" as="font" type="font/otf" crossorigin />
     <link rel="preload" href="clock_ticking.mp3" as="audio" />
@@ -61,152 +71,431 @@
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" />
 
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <style>
-        @font-face {
-        font-family: "Digital Dismay";
-        src: url("digital_dismay.otf") format("opentype");
-        font-weight: normal;
-        font-style: normal;
-        font-display: swap;
-    }
-    .digital-font {
-        font-family: "Digital Dismay", monospace;
-    }
-    .countdown span {
-      position: relative;
-    }
-  
-    .countdown span::after {
-      content: attr(data-label);
-      position: absolute;
-      left: 50%;
-      top: 100%;
-      transform: translateX(-50%);
-      margin-top: 0.75rem;
-      font-size: 0.75rem;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      opacity: 0.9;
-      white-space: nowrap;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
-    }
-  </style>
+    <link href="/src/style.css" rel="stylesheet" />
   </head>
-  
+  <body class="m-0 overflow-x-hidden bg-[#000500] text-white">
+    <audio id="bg-music" src="the_avengers.mp3" preload="auto" loop></audio>
+    <audio id="tick-sound" src="clock_ticking.mp3" preload="auto"></audio>
 
-  <body class="h-screen w-screen overflow-hidden">
-    <img src="avengersdoomsday.png" style="position: absolute;width: 250px;left: 50%;transform: translateX(-50%);top: 150px;"/>
+    <!-- Global Overlays -->
     <div
-        class="h-full w-full flex items-center justify-center"
-        style="
-        background: radial-gradient(circle at center, #ffffff 0%, #807979 0.8%, #6e776e 0%, #455b45 3%, #274127 18%, #112111 52%, #070b07 100%);
-        "
+      class="vignette pointer-events-none fixed top-0 left-0 z-20 h-full w-full bg-[radial-gradient(circle,transparent_30%,#000500_100%)]"
+    ></div>
+    <div
+      class="noise-overlay pointer-events-none fixed top-0 left-0 z-50 h-full w-full opacity-[0.025]"
+    ></div>
+
+    <!-- HERO SECTION (Full Screen) -->
+    <section
+      class="relative flex h-screen w-full items-center justify-center overflow-hidden"
     >
+      <img
+        src="avengersdoomsday.png"
+        class="absolute top-[150px] left-1/2 z-10 w-[250px] -translate-x-1/2"
+      />
 
-        <audio
-            id="bg-music"
-            src="the_avengers.mp3"
-            preload="auto"
-            loop
-        ></audio>
+      <button
+        id="sound-toggle"
+        class="absolute top-[290px] left-1/2 z-40 -translate-x-1/2 cursor-pointer border-none bg-transparent font-mono text-[12px] tracking-[3px] text-white uppercase transition-colors transition-opacity duration-1000 ease-in-out outline-none"
+      >
+        Sound Off
+      </button>
 
-        <audio
-            id="tick-sound"
-            src="clock_ticking.mp3"
-            preload="auto"
-        ></audio>
+      <div
+        class="light-source relative flex h-[140vmin] w-[140vmin] items-center justify-center"
+      >
+        <div
+          class="rays rays-1 absolute h-full w-full rounded-full opacity-100 mix-blend-screen blur-[100px]"
+        ></div>
 
-    
-        <div class="countdown digital-font text-white text-6xl">
-            <span id="months" data-label="MONTHS">00</span> :
-            <span id="days" data-label="DAYS">00</span> :
-            <span id="hours" data-label="HOURS">00</span> :
-            <span id="minutes" data-label="MINUTES">00</span> :
-            <span id="seconds" data-label="SECONDS">00</span>
+        <div
+          class="rays rays-2 absolute h-full w-full rounded-full opacity-100 mix-blend-screen blur-[100px]"
+        ></div>
+
+        <div
+          class="core absolute z-10 h-[3vmin] w-[3vmin] rounded-[60%_40%_30%_70%_/_60%_30%_70%_40%] bg-white blur-[3px]"
+        ></div>
+      </div>
+
+      <div
+        class="absolute left-1/2 z-30 flex h-full w-[250px] w-full -translate-x-1/2 items-center justify-center"
+      >
+        <div
+          class="countdown text-6xl text-white"
+          style="font-family: &quot;Digital Dismay&quot;, monospace"
+        >
+          <span
+            class="relative after:absolute after:top-full after:left-1/2 after:mt-3 after:-translate-x-1/2 after:font-mono after:text-[0.75rem] after:tracking-[0.35em] after:whitespace-nowrap after:uppercase after:opacity-90 after:content-[attr(data-label)]"
+            id="months"
+            data-label="MONTHS"
+            >00</span
+          >
+          :
+          <span
+            class="relative after:absolute after:top-full after:left-1/2 after:mt-3 after:-translate-x-1/2 after:font-mono after:text-[0.75rem] after:tracking-[0.35em] after:whitespace-nowrap after:uppercase after:opacity-90 after:content-[attr(data-label)]"
+            id="days"
+            data-label="DAYS"
+            >00</span
+          >
+          :
+          <span
+            class="relative after:absolute after:top-full after:left-1/2 after:mt-3 after:-translate-x-1/2 after:font-mono after:text-[0.75rem] after:tracking-[0.35em] after:whitespace-nowrap after:uppercase after:opacity-90 after:content-[attr(data-label)]"
+            id="hours"
+            data-label="HOURS"
+            >00</span
+          >
+          :
+          <span
+            class="relative after:absolute after:top-full after:left-1/2 after:mt-3 after:-translate-x-1/2 after:font-mono after:text-[0.75rem] after:tracking-[0.35em] after:whitespace-nowrap after:uppercase after:opacity-90 after:content-[attr(data-label)]"
+            id="minutes"
+            data-label="MINUTES"
+            >00</span
+          >
+          :
+          <span
+            class="relative after:absolute after:top-full after:left-1/2 after:mt-3 after:-translate-x-1/2 after:font-mono after:text-[0.75rem] after:tracking-[0.35em] after:whitespace-nowrap after:uppercase after:opacity-90 after:content-[attr(data-label)]"
+            id="seconds"
+            data-label="SECONDS"
+            >00</span
+          >
         </div>
 
-        <a href="https://www.marvel.com/movies/avengers-doomsday" target="_blank" style="position: absolute;margin-top: 300px;color: white;font-size: 12px;letter-spacing: 3px;cursor: pointer;" class="font-mono">Learn More</a>
-      
-    </div>
+        <a
+          id="learn-more"
+          href="#timeline"
+          class="absolute mt-[340px] cursor-pointer font-mono text-[12px] tracking-[3px] text-white transition-colors transition-opacity duration-1000 ease-in-out"
+          >Learn More</a
+        >
+      </div>
 
-    <footer class="absolute bottom-5 text-center text-xs text-white/60" style="left: 50%;transform: translateX(-50%);">
-      A 
-      <a
-        href="https://github.com/fredikaputra"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="group relative inline-block text-white/70 hover:text-white transition"
+      <!-- Bottom Light Shine (Layer 1: Behind the fade) -->
+      <div
+        class="pointer-events-none absolute bottom-0 left-1/2 z-10 h-[300px] w-full -translate-x-1/2 bg-[radial-gradient(ellipse_at_bottom,rgba(80,255,80,0.15)_0%,transparent_60%)] mix-blend-screen blur-[60px]"
+      ></div>
+
+      <!-- Fade Overlay (Layer 2: On top of shine, blending into next section) -->
+      <div
+        class="pointer-events-none absolute bottom-0 left-0 z-20 h-[200px] w-full bg-gradient-to-t from-[#000500] via-[#000500]/50 to-transparent"
+      ></div>
+
+      <div
+        id="hero-footer"
+        class="absolute bottom-10 left-1/2 z-30 -translate-x-1/2 text-center text-xs text-white/60 transition-opacity duration-1000 ease-in-out"
       >
-        fan
-        <span
-          class="absolute left-0 -bottom-0.5 h-px w-0 bg-white transition-all duration-300 group-hover:w-full"
-        ></span>
-      </a>-made countdown, crafted with love ❤️ for fellow fans.
+        A
+        <a
+          href="https://www.instagram.com/fredika_putra"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group relative inline-block text-white/70 transition hover:text-white"
+        >
+          fan
+          <span
+            class="absolute -bottom-0.5 left-0 h-px w-0 bg-white transition-all duration-300 group-hover:w-full"
+          ></span> </a
+        >-made countdown, crafted with ❤️ for fellow fans.
+      </div>
+    </section>
+
+    <!-- TIMELINE SECTION -->
+    <section
+      id="timeline"
+      class="relative z-30 w-full bg-[#000500] px-6 pt-12 pb-16"
+    >
+      <div class="mx-auto max-w-4xl">
+        <h2 class="mb-16 text-center text-4xl tracking-[0.2em] text-white">
+          TIMELINE
+        </h2>
+
+        <div class="relative">
+          <div
+            class="absolute top-0 bottom-0 left-8 w-0.5 bg-gradient-to-b from-green-500/50 via-green-500/30 to-transparent"
+          ></div>
+
+          <div class="space-y-12">
+            <div class="relative flex items-start space-x-8">
+              <div
+                class="relative z-10 flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full border-2 border-green-500 bg-black/80"
+              >
+                <div
+                  class="h-3 w-3 animate-pulse rounded-full bg-green-500"
+                ></div>
+              </div>
+              <div
+                class="flex-1 rounded-lg border border-green-900/50 bg-black/60 p-6 backdrop-blur-sm transition-all duration-300 hover:border-[rgba(120,255,120,0.6)] hover:shadow-[0_0_20px_rgba(80,255,80,0.3)]"
+              >
+                <h3 class="mb-2 font-mono text-xl font-bold text-white">
+                  Thor Will Return
+                </h3>
+                <h4 class="mb-3 font-mono text-sm text-green-400">
+                  December 30, 2025
+                </h4>
+                <p class="font-mono text-sm leading-relaxed text-gray-400">
+                  Chris Hemsworth reprises his role as the God of Thunder. Thor
+                  returns for Doomsday, bringing his mighty hammer Mjolnir to
+                  the ultimate battle.
+                </p>
+
+                <div class="mt-6 text-left">
+                  <a
+                    href="https://youtu.be/1clWprLC5Ak"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center space-x-2 border border-green-500/50 bg-green-900/20 px-6 py-2 font-mono text-xs tracking-[3px] text-green-400 uppercase transition-all duration-300 hover:bg-green-500/20"
+                  >
+                    <svg
+                      class="h-4 w-4"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                      />
+                    </svg>
+                    <span>Youtube</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="relative flex items-start space-x-8">
+              <div
+                class="relative z-10 flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full border-2 border-green-500 bg-black/80"
+              >
+                <div
+                  class="h-3 w-3 animate-pulse rounded-full bg-green-500"
+                ></div>
+              </div>
+              <div
+                class="flex-1 rounded-lg border border-green-900/50 bg-black/60 p-6 backdrop-blur-sm transition-all duration-300 hover:border-[rgba(120,255,120,0.6)] hover:shadow-[0_0_20px_rgba(80,255,80,0.3)]"
+              >
+                <h3 class="mb-2 font-mono text-xl font-bold text-white">
+                  Steve Rogers Will Return
+                </h3>
+                <h4 class="mb-3 font-mono text-sm text-green-400">
+                  December 23, 2025
+                </h4>
+                <p class="font-mono text-sm leading-relaxed text-gray-400">
+                  Chris Evans makes his triumphant return to the MCU. The
+                  original Avenger comes back for Doomsday in an unexpected
+                  twist.
+                </p>
+
+                <div class="mt-6 text-left">
+                  <a
+                    href="https://youtu.be/UiMg566PREA"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center space-x-2 border border-green-500/50 bg-green-900/20 px-6 py-2 font-mono text-xs tracking-[3px] text-green-400 uppercase transition-all duration-300 hover:bg-green-500/20"
+                  >
+                    <svg
+                      class="h-4 w-4"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                      />
+                    </svg>
+                    <span>Youtube</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="relative flex items-start space-x-8">
+              <div
+                class="relative z-10 flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full border-2 border-green-500 bg-black/80"
+              >
+                <div
+                  class="h-3 w-3 animate-pulse rounded-full bg-green-500"
+                ></div>
+              </div>
+              <div
+                class="flex-1 rounded-lg border border-green-900/50 bg-black/60 p-6 backdrop-blur-sm transition-all duration-300 hover:border-[rgba(120,255,120,0.6)] hover:shadow-[0_0_20px_rgba(80,255,80,0.3)]"
+              >
+                <h3 class="mb-2 font-mono text-xl font-bold text-white">
+                  Doomsday Production Begins
+                </h3>
+                <h4 class="mb-3 font-mono text-sm text-green-400">
+                  March 27, 2025
+                </h4>
+                <p class="font-mono text-sm leading-relaxed text-gray-400">
+                  Production officially begins on Avengers: Doomsday. The
+                  cameras start rolling as the next chapter of the MCU comes to
+                  life.
+                </p>
+
+                <div class="mt-6 text-left">
+                  <a
+                    href="https://youtu.be/aZXBFirj6b4"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center space-x-2 border border-green-500/50 bg-green-900/20 px-6 py-2 font-mono text-xs tracking-[3px] text-green-400 uppercase transition-all duration-300 hover:bg-green-500/20"
+                  >
+                    <svg
+                      class="h-4 w-4"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                      />
+                    </svg>
+                    <span>Youtube</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="relative flex items-start space-x-8">
+              <div
+                class="relative z-10 flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full border-2 border-green-500/70 bg-black/80"
+              >
+                <div class="h-2.5 w-2.5 rounded-full bg-green-500/80"></div>
+              </div>
+              <div
+                class="flex-1 rounded-lg border border-green-900/50 bg-black/60 p-6 backdrop-blur-sm transition-all duration-300 hover:border-[rgba(120,255,120,0.6)] hover:shadow-[0_0_20px_rgba(80,255,80,0.3)]"
+              >
+                <h3 class="mb-2 font-mono text-xl font-bold text-white">
+                  Doomsday Cast Announcement
+                </h3>
+                <h4 class="mb-3 font-mono text-sm text-green-400">
+                  March 26, 2025
+                </h4>
+                <p class="font-mono text-sm leading-relaxed text-gray-400">
+                  The full cast lineup for Avengers: Doomsday is revealed,
+                  featuring returning heroes and new faces joining the epic
+                  battle.
+                </p>
+
+                <div class="mt-6 text-left">
+                  <a
+                    href="https://www.youtube.com/live/Iy7k3aJS0Fw"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center space-x-2 border border-green-500/50 bg-green-900/20 px-6 py-2 font-mono text-xs tracking-[3px] text-green-400 uppercase transition-all duration-300 hover:bg-green-500/20"
+                  >
+                    <svg
+                      class="h-4 w-4"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                      />
+                    </svg>
+                    <span>Youtube</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="relative flex items-start space-x-8">
+              <div
+                class="relative z-10 flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full border-2 border-green-500/50 bg-black/80"
+              >
+                <div class="h-2 w-2 rounded-full bg-green-500/60"></div>
+              </div>
+              <div
+                class="flex-1 rounded-lg border border-green-900/50 bg-black/60 p-6 backdrop-blur-sm transition-all duration-300 hover:border-[rgba(120,255,120,0.6)] hover:shadow-[0_0_20px_rgba(80,255,80,0.3)]"
+              >
+                <h3 class="mb-2 font-mono text-xl font-bold text-white">
+                  Doomsday Revealed
+                </h3>
+                <h4 class="mb-3 font-mono text-sm text-green-400">
+                  July 28, 2024
+                </h4>
+                <p class="font-mono text-sm leading-relaxed text-gray-400">
+                  Marvel Studios unveils "Avengers: Doomsday" at San Diego
+                  Comic-Con. The first official title announcement sends
+                  shockwaves through the MCU fandom.
+                </p>
+
+                <div class="mt-6 text-left">
+                  <a
+                    href="https://youtu.be/nf1Xv-qTsuw?t=938"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center space-x-2 border border-green-500/50 bg-green-900/20 px-6 py-2 font-mono text-xs tracking-[3px] text-green-400 uppercase transition-all duration-300 hover:bg-green-500/20"
+                  >
+                    <svg
+                      class="h-4 w-4"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                      />
+                    </svg>
+                    <span>Youtube</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer
+      class="border-t border-gray-900 bg-black/90 px-6 py-12 text-center text-sm leading-relaxed text-gray-400"
+    >
+      <div class="mx-auto max-w-3xl">
+        <div class="mb-6">
+          <p class="text-base text-gray-300">
+            A non-commercial fan project crafted with
+            <span class="animate-pulse text-red-600">❤</span> for the MCU
+            community.
+          </p>
+        </div>
+
+        <div
+          class="mb-8 grid grid-cols-1 gap-4 border-t border-gray-800/50 pt-6 md:grid-cols-2"
+        >
+          <div class="space-y-1">
+            <p
+              class="text-[10px] font-bold tracking-widest text-gray-600 uppercase"
+            >
+              Visuals
+            </p>
+            <p>
+              Assets & Logos &copy;
+              <span class="font-medium text-white">Marvel Studios</span><br />
+              & <span class="font-medium text-white">Walt Disney Co.</span>
+            </p>
+          </div>
+          <div class="space-y-1">
+            <p
+              class="text-[10px] font-bold tracking-widest text-gray-600 uppercase"
+            >
+              Audio
+            </p>
+            <p>
+              Theme by <span class="font-medium text-white">Alan Silvestri</span
+              ><br />
+              ℗ <span class="font-medium text-white">Marvel Music</span> /
+              Hollywood Records
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="rounded-lg bg-gray-900/30 p-4 text-[11px] text-gray-500 italic"
+        >
+          <p
+            class="mb-2 text-[9px] font-bold tracking-[0.2em] uppercase opacity-40"
+          >
+            Legal Disclaimer
+          </p>
+          This website is intended for entertainment and non-commercial purposes
+          only. No copyright infringement is intended. I do not claim ownership
+          of the characters, images, or music featured. All rights belong to
+          their respective copyright holders.
+        </div>
+      </div>
     </footer>
-    
-    <script>
-      const bgMusic = document.getElementById("bg-music")
-      const tickSound = document.getElementById("tick-sound")
-    
-      bgMusic.volume = 0.4
-      tickSound.volume = 0.6
-    
-      let audioUnlocked = false
-    
-      function unlockAudio() {
-        if (audioUnlocked) return
-        audioUnlocked = true
-    
-        bgMusic.play().catch(() => {})
-      }
-    
-      document.addEventListener("click", unlockAudio, { once: true })
-    
-      function playTick() {
-        if (!audioUnlocked) return
-        tickSound.currentTime = 0
-        tickSound.play().catch(() => {})
-      }
-    
-      const targetDate = new Date(2026, 11, 18, 0, 0, 0)
-    
-      function updateCountdown() {
-        const now = new Date()
-        let diff = targetDate - now
-        if (diff <= 0) return
-    
-        const seconds = Math.floor((diff / 1000) % 60)
-        const minutes = Math.floor((diff / 1000 / 60) % 60)
-        const hours = Math.floor((diff / 1000 / 60 / 60) % 24)
-    
-        let temp = new Date(now)
-        let months = 0
-        while (true) {
-          const next = new Date(temp)
-          next.setMonth(next.getMonth() + 1)
-          if (next <= targetDate) {
-            temp = next
-            months++
-          } else break
-        }
-    
-        const days = Math.floor(
-          (targetDate - temp) / (1000 * 60 * 60 * 24)
-        )
-    
-        document.getElementById("months").textContent = String(months).padStart(2, "0")
-        document.getElementById("days").textContent = String(days).padStart(2, "0")
-        document.getElementById("hours").textContent = String(hours).padStart(2, "0")
-        document.getElementById("minutes").textContent = String(minutes).padStart(2, "0")
-        document.getElementById("seconds").textContent = String(seconds).padStart(2, "0")
-    
-        playTick()
-      }
-    
-      updateCountdown()
-      setInterval(updateCountdown, 1000)
-    </script>
+
+    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
